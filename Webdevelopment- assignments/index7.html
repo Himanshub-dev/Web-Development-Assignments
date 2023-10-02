@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <script>
+        // Task 1: Prompt the user for their name
+        var userName = prompt("Please enter your name:");
+
+        // Task 2: Use a pop-up box to welcome the user by name
+        if (userName !== null) {
+            alert("Welcome, " + userName + "!");
+        }
+
+        // Task 3: Display the current date in the specified format
+        var currentDate = new Date();
+        var options = { year: 'numeric', month: 'long', day: 'numeric' };
+        var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+        // Task 4: Display the last modified date of the document
+        var lastModifiedDate = new Date(document.lastModified);
+
+        // Task 5: Display a message based on the current time
+        var currentHour = currentDate.getHours();
+        var greeting = "Good ";
+
+        if (currentHour < 12) {
+            greeting += "Morning";
+        } else if (currentHour >= 12 && currentHour < 18) {
+            greeting += "Afternoon";
+        } else {
+            greeting += "Evening";
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome Page</h1>
+
+    <!-- Task 3: Display the current date -->
+    <p>Current Date: <span id="currentDate"></span></p>
+
+    <!-- Task 4: Display the last modified date of the document -->
+    <p>Last Modified Date: <span id="lastModifiedDate"></span></p>
+
+    <!-- Task 5: Display the greeting message -->
+    <p>Greeting: <span id="greeting"></span></p>
+
+    <script>
+        // Task 3 (continued): Set the current date on the page
+        document.getElementById("currentDate").textContent = formattedDate;
+
+        // Task 4 (continued): Set the last modified date on the page
+        document.getElementById("lastModifiedDate").textContent = lastModifiedDate.toLocaleDateString(undefined, options);
+
+        // Task 5 (continued): Set the greeting message on the page
+        document.getElementById("greeting").textContent = greeting;
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Replacement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>String Replacement with X</h1>
+
+    
+    <button class="button" onclick="replaceString()">Replace 'a' with 'x'</button>
+    <button class="button" onclick="checkAge()">Check age</button>
+    <script>
+
+var age = 17;
+
+// Function to check age and display a message
+function checkAge() {
+    if (age < 18) {
+        alert("You are too young");
+    } else {
+        alert("You may enter");
+    }
+}
+        function replaceString() {
+            var sentence = prompt("Enter a sentence:");
+            if (sentence !== null) {
+                var replacedSentence = sentence.replace(/a/g, 'x');
+                alert("Replaced sentence: " + replacedSentence);
+            }
+        }
+    </script>
+</body>
+</html>
+

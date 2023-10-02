@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visitor Information Form</title>
+</head>
+<body>
+    <h1>Visitor Information</h1>
+    <form action="process_form.php" method="post">
+        <label for="email">Email address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label>Do you use the web for:</label><br>
+        <input type="checkbox" id="research" name="use_web[]" value="Research">
+        <label for="research">Research</label><br>
+        <input type="checkbox" id="purchases" name="use_web[]" value="Purchases">
+        <label for="purchases">Purchases</label><br><br>
+
+        <label for="occupation">Occupation:</label><br>
+        <select id="occupation" name="occupation" required>
+            <option value="Student">Student</option>
+            <option value="Employed">Employed</option>
+            <option value="Unemployed">Unemployed</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+
+        <label>Want us to send you junk email?</label><br>
+        <input type="radio" id="yes" name="junk_email" value="Yes">
+        <label for="yes">Absolutely</label>
+        <input type="radio" id="no" name="junk_email" value="No" checked>
+        <label for="no">No way, man</label><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>

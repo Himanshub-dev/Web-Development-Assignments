@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Decimal</th>
+            <th>English</th>
+            <th>Spanish</th>
+            <th>Korean</th>
+            <th>Binary</th>
+        </tr>
+    </table>
+
+    <script>
+        const data = [
+            { decimal: '1', english: 'one', spanish: 'uno', korean: 'hana', binary: '0001' },
+            { decimal: '2', english: 'Two', spanish: 'dos', korean: 'dool', binary: '0010' },
+            { decimal: '3', english: 'Three', spanish: 'Tres', korean: 'Set', binary: '0011' },
+            { decimal: '4', english: 'Four', spanish: 'Quatro', korean: 'Net', binary: '0100' },
+            { decimal: '5', english: 'Five', spanish: 'Cinco', korean: 'Daset', binary: '0101' },
+        ];
+
+        const table = document.querySelector('table');
+
+        data.forEach(item => {
+            const row = table.insertRow();
+            const cells = Object.values(item);
+
+            cells.forEach(cellData => {
+                const cell = row.insertCell();
+                cell.textContent = cellData;
+            });
+        });
+    </script>
+</body>
+</html>

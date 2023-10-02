@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form id="myForm" action="submit.php" method="GET">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>Textarea:</td>
+                <td><textarea name="textarea" id="textarea"></textarea></td>
+            </tr>
+            <tr>
+                <td>Dropdown:</td>
+                <td>
+                    <select name="dropdown" id="dropdown">
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Radio Buttons:</td>
+                <td>
+                    <input type="radio" name="radio" value="radio1"> Radio 1
+                    <input type="radio" name="radio" value="radio2"> Radio 2
+                    <input type="radio" name="radio" value="radio3"> Radio 3
+                </td>
+            </tr>
+            <tr>
+                <td>Checkboxes:</td>
+                <td>
+                    <input type="checkbox" name="checkbox1" value="checkbox1"> Checkbox 1
+                    <input type="checkbox" name="checkbox2" value="checkbox2"> Checkbox 2
+                    <input type="checkbox" name="checkbox3" value="checkbox3"> Checkbox 3
+                </td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            
+        
+            if (name === "" || email === "") {
+                alert("Please fill in all fields.");
+                event.preventDefault();
+            }
+
+            if (email.indexOf("@") === -1) {
+                alert("Email address must contain the @ sign.");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
